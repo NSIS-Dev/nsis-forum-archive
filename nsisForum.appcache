@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# v0.1.0 2017-03-27
+
+CACHE:
+assets/css/theme.css
+assets/js/app.css
+index.html
+
+# Resources that require the user to be online.
+NETWORK:
+*

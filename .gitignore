@@ -1,0 +1,12 @@
+# Package managers
+bower_components/
+node_modules/
+vendor/
+
+# Project specific
+*.svg
+*.zip
+.htaccess
+assets/
+data/
+todo.md
