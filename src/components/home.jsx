@@ -6,6 +6,9 @@ import { join } from 'path';
 // Components
 import getThread from '../lib/get-thread';
 
+// Constants
+const forumUrl = 'http://forums.winamp.com/forumdisplay.php?forumid=65';
+
 const Home = React.createClass({
   getInitialState: function() {
     return {
@@ -25,7 +28,7 @@ const Home = React.createClass({
     return (
       <div className="container">
         <h1 className="lead">Forum Index</h1>
-        <table className="table table-striped">
+        <table className="table table-striped table-responsive">
           <thead>
             <tr>
               <th className="text-left">Topic</th>
@@ -46,6 +49,13 @@ const Home = React.createClass({
               );
             })}
           </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                  <span className="text-muted"><a className="text-muted" href={forumUrl}>Source</a> | <a className="text-muted" href="https://github.com/NSIS-Dev/nsis-forum-archive">GitHub</a></span>
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
       )

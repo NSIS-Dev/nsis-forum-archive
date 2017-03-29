@@ -30,7 +30,10 @@ const Thread = React.createClass({
   render() {
     return (
       <div className="container">
-        <h1 className="lead"><a href="./">Forum Index</a> / {this.state.data.title}</h1>
+        <div class="row">
+          <h1 className="lead"><a href="./">Forum Index</a> / {this.state.data.title}</h1>
+        </div>
+        
         <table className="table table-striped table-responsive">
           <tbody>
             {this.state.data.posts.map(function(post) {
@@ -42,7 +45,7 @@ const Thread = React.createClass({
           <tfoot>
             <tr>
               <td>
-                  <span className="text-muted"><a className="text-muted" href={forumUrl + this.state.data.thread_id}>Source</a> | <a className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.thread_id}>Internet Archive</a></span>
+                  <span className="text-muted"><a className="text-muted" href={forumUrl + this.state.data.thread_id}>Source</a> | <a className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.thread_id}>Internet Archive</a> | <a className="text-muted" href="https://github.com/NSIS-Dev/nsis-forum-archive">GitHub</a></span>
               </td>
             </tr>
           </tfoot>
