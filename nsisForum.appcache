@@ -3,7 +3,7 @@ CACHE MANIFEST
 
 CACHE:
 assets/css/theme.css
-assets/js/app.css
+assets/js/app.js
 index.html
 
 # Resources that require the user to be online.
