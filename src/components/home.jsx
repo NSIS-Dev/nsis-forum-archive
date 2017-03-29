@@ -24,7 +24,7 @@ const Home = React.createClass({
   render() {
     return (
       <div className="container">
-        <h1>NSIS Forum Archive</h1>
+        <h1 className="lead">Forum</h1>
         <table className="table table-striped">
           <thead>
             <tr>
