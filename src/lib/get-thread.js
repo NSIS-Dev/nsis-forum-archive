@@ -4,7 +4,7 @@ import { join } from 'path';
 // Library
 import fetchJson from './fetch-json';
 import setState from './set-state';
-// import didExpire from './did-expire';
+import didExpire from './did-expire';
 
 export default function getThread(that, thread, isIndex = false) {
   console.time('Data loaded');
@@ -18,7 +18,7 @@ export default function getThread(that, thread, isIndex = false) {
   }
 
   // not saved or older than a month
-  if (item === null) {
+  if (item === null || didExpire(thread, 'weekly') == true) {
     console.log('Loading data from JSON file');
 
     let fileUri;
@@ -31,9 +31,10 @@ export default function getThread(that, thread, isIndex = false) {
     fetchJson(that, fileUri, isIndex)
   } else {
     console.log('Loading data from localStorage');
-
     setState(that, JSON.parse(item));
   }
+
+  
 
   console.timeEnd('Data loaded');
 }

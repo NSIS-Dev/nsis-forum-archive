@@ -25,6 +25,7 @@ export default function fetchJson(that, thread, isIndex = false) {
             key = 'nsis-forum.thread:' + json.thread_id;
           }
 
+          json.indexed = Date.now();
           localStorage.setItem(key, JSON.stringify(json));
 
           // if (localStorage.getItem('nsis-forum.lastUpdate') === null || didExpire() === true) {
