@@ -1,6 +1,8 @@
 // Polyfill, because fuck you Safari!
 import 'whatwg-fetch';
 
+import {version} from '../../package.json';
+
 // Library
 // import didExpire from './did-expire';
 import setState from './set-state';
@@ -26,11 +28,8 @@ export default function fetchJson(that, thread, isIndex = false) {
           }
 
           json.indexed = Date.now();
+          json.generator_version = version;
           localStorage.setItem(key, JSON.stringify(json));
-
-          // if (localStorage.getItem('nsis-forum.lastUpdate') === null || didExpire() === true) {
-          //   localStorage.setItem('nsis-forum.lastUpdate', (new Date).getTime());
-          // }
         });
       } else {
         throw "Not Found";
