@@ -28,7 +28,7 @@ const Home = React.createClass({
     return (
       <div className="container">
         <h1 className="lead">Forum Index</h1>
-        <table className="table table-striped table-responsive">
+        <table className="table table-striped">
           <thead>
             <tr>
               <th className="text-left">Topic</th>

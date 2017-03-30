@@ -30,11 +30,8 @@ const Thread = React.createClass({
   render() {
     return (
       <div className="container">
-        <div class="row">
-          <h1 className="lead"><a href="./">Forum Index</a> / {this.state.data.title}</h1>
-        </div>
-        
-        <table className="table table-striped table-responsive">
+        <h1 className="lead"><a href="./">Forum Index</a> / {this.state.data.title}</h1>
+        <table className="table table-striped">
           <tbody>
             {this.state.data.posts.map(function(post) {
               return (
