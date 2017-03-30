@@ -7,8 +7,11 @@ You can't really use this without having any data (which is not public at this t
 git clone https://github.com/NSIS-Dev/nsis-forum-archive
 cd nsis-forum-archive
 
+# Install webpack and server globally
+npm install -g webpack webpack-dev-server
+
 # Install dependencies and build
-yarn || npm install
+npm install
 
 # Run server at localhost:8080
 npm start
