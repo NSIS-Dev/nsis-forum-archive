@@ -18,7 +18,7 @@ export default function getThread(that, thread, isIndex = false) {
   }
 
   // not saved or older than a month
-  if (item === null || didExpire(item, 'weekly') =)= true) {
+  if (item === null || didExpire(item, 'weekly') === true) {
     console.log('Loading data from JSON file');
 
     let fileUri;
