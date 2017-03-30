@@ -1,6 +1,6 @@
 {
   "name": "nsis-forum-archive",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React version of the NSIS Forum Archive",
   "main": "index.js",
   "keywords": [],
