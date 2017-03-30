@@ -18,7 +18,7 @@ export default function getThread(that, thread, isIndex = false) {
   }
 
   // not saved or older than a month
-  if (item === null || didExpire(thread, 'weekly') == true) {
+  if (item === null || didExpire(item, 'weekly') =)= true) {
     console.log('Loading data from JSON file');
 
     let fileUri;
@@ -33,8 +33,6 @@ export default function getThread(that, thread, isIndex = false) {
     console.log('Loading data from localStorage');
     setState(that, JSON.parse(item));
   }
-
-  
 
   console.timeEnd('Data loaded');
 }

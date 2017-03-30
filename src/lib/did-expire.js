@@ -1,7 +1,6 @@
-export default function didExpire(id, interval = 'weekly') {
+export default function didExpire(data, interval = 'weekly') {
 
     const now = Date.now();
-    const data = localStorage.getItem('nsis-forum.thread:' + id);
     const json = JSON.parse(data);
     const indexTime = json.indexed || 0;
 
@@ -21,9 +20,9 @@ export default function didExpire(id, interval = 'weekly') {
         return true;
     } else if (isNaN(interval) === false && period >= interval) {
         // custom
-        console.warn('Custom expiration date met');
+        console.log('Custom expiration date met');
         return true;
     }
-
+ 
     return false;
 }
