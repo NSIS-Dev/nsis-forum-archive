@@ -42,7 +42,7 @@ const Thread = React.createClass({
           <tfoot>
             <tr>
               <td>
-                  <span className="text-muted"><a className="text-muted" href={forumUrl + this.state.data.thread_id}>Source</a> | <a className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.thread_id}>Internet Archive</a> | <a className="text-muted" href="https://github.com/NSIS-Dev/nsis-forum-archive">GitHub</a></span>
+                  <span className="text-muted"><a className="text-muted" href={forumUrl + this.state.data.thread_id}>Source</a> | <a className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.thread_id}>Internet Archive</a></span>
               </td>
             </tr>
           </tfoot>

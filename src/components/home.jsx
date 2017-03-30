@@ -52,7 +52,7 @@ const Home = React.createClass({
           <tfoot>
             <tr>
               <td>
-                  <span className="text-muted"><a className="text-muted" href={forumUrl}>Source</a> | <a className="text-muted" href="https://github.com/NSIS-Dev/nsis-forum-archive">GitHub</a></span>
+                  <span className="text-muted"><a className="text-muted" href={forumUrl}>Source</a></span>
               </td>
             </tr>
           </tfoot>
