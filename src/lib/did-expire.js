@@ -2,25 +2,21 @@ export default function didExpire(data, interval = 'weekly') {
 
     const now = Date.now();
     const json = JSON.parse(data);
-    const indexTime = json.indexed || 0;
+    const indexTime = json.indexed || 1;
 
     const period = now - indexTime;
 
     if (interval === 'monthly' && period >= 2629746000) {
         // monthly
-        console.log('Monthly expiration date met, reloading from JSON');
         return true;
     } else if (interval === 'weekly' && period >= 604800000) {
         // weekly
-        console.log('Weekly expiration date met');
         return true;
     } else if (interval === 'daily' && period >= 86400000) {
         // daily
-        console.log('Daily expiration date met');
         return true;
     } else if (isNaN(interval) === false && period >= interval) {
         // custom
-        console.log('Custom expiration date met');
         return true;
     }
  
