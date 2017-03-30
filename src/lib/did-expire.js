@@ -8,15 +8,15 @@ export default function didExpire(data, interval = 'weekly') {
 
     if (interval === 'monthly' && period >= 2629746000) {
         // monthly
-        console.warn('Monthly expiration date met, reloading from JSON');
+        console.log('Monthly expiration date met, reloading from JSON');
         return true;
     } else if (interval === 'weekly' && period >= 604800000) {
         // weekly
-        console.warn('Weekly expiration date met');
+        console.log('Weekly expiration date met');
         return true;
     } else if (interval === 'daily' && period >= 86400000) {
         // daily
-        console.warn('Daily expiration date met');
+        console.log('Daily expiration date met');
         return true;
     } else if (isNaN(interval) === false && period >= interval) {
         // custom
