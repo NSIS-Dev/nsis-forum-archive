@@ -9,4 +9,5 @@ vendor/
 .htaccess
 assets/
 data/
+src/**/_*.js
 todo.md
