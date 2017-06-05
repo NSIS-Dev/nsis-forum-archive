@@ -9,6 +9,7 @@
   "dependencies": {
     "apache-server-configs": "^2.14.0",
     "bootstrap": "4.0.0-alpha.6",
+    "font-awesome-svg-png": "^1.2.2",
     "identicon.js": "^2.2.1",
     "pretty-date": "^0.2.0",
     "react": "^15.5.4",
