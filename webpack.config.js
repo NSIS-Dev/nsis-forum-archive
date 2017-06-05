@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: __dirname + '/assets',
     filename: 'js/app.js',
-    publicPath: "/assets"
+    publicPath: __dirname + '/assets'
   },
   target: 'web',
   module: {
@@ -26,7 +26,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: './node_modules/apache-server-configs/dist/.htaccess',
-        to: './.htaccess'
+        to: '../'
       },
       {
         from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
