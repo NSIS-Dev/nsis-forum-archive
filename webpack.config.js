@@ -25,8 +25,16 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
       {
+        from: './node_modules/apache-server-configs/dist/.htaccess',
+        to: './.htaccess'
+      },
+      {
         from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
         to: './css/theme.css'
+      },
+      {
+        from: './bower_components/SVG-Loaders/svg-loaders/oval.svg',
+        to: './images/loader.svg'
       }
     ])
   ]
