@@ -14,8 +14,8 @@ import NotFound from './components/404.jsx';
 const routes = (
     <Router history={history}>
       <Switch>
-          <Route path="/thread/:thread" component={Thread} />
-          <Route path="/" component={Index} />
+          <Route exact path="/" component={Index} />
+          <Route exact path="/thread/:thread" component={Thread} />
           <Route path="*" component={NotFound} />
       </Switch>
     </Router>
