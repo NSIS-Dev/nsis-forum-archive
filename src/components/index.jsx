@@ -21,6 +21,7 @@ class Index extends React.Component {
        this.setState({
          threads: data
        })
+      document.title = "NSIS Forum Archive";
     })
   }
 

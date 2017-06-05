@@ -25,6 +25,7 @@ class Thread extends React.Component {
        this.setState({
          data: data
        })
+       document.title = data.title + ' | NSIS Forum Archive';
     })
   }
 

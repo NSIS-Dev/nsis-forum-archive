@@ -3,8 +3,12 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class NotFound extends React.Component {
+  componentWillMount() {
+    document.title = "404 | NSIS Forum Archive";
+  }
+
   componentDidMount() {
-    document.title = "404";
+    document.querySelector('.spinner').style.display = 'none';
   }
 
   render() {
