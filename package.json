@@ -14,7 +14,7 @@
     "pretty-date": "^0.2.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router": "^3.0.5",
+    "react-router-dom": "^4.1.1",
     "sha1": "^1.1.1"
   },
   "devDependencies": {
@@ -29,6 +29,6 @@
   "scripts": {
     "build": "webpack -p",
     "postinstall": "bower install && webpack -p",
-    "start": "webpack-dev-server --history-api-fallback --progress --colors --hot"
+    "start": "webpack-dev-server --progress --colors --hot"
   }
 }
