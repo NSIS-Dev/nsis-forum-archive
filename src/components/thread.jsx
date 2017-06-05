@@ -1,31 +1,36 @@
-// Components
-import ThreadTableRow from './thread-tablerow.jsx';
-
 // Dependencies
 import React from 'react';
-import { join } from 'path';
-import getThread from '../lib/get-thread';
+import loadData from '../lib/load-data';
+
+// Components
+import Post from './post.jsx';
 
 // Constants
 const forumUrl = 'http://forums.winamp.com/showthread.php?t=';
 
-const Thread = React.createClass({
-  getInitialState: function() {
-    return {
-      data: {
-        title: 'NSIS Forum Archive',
-        posts: []
+class Thread extends React.Component {
+  constructor() {
+      super();
+      this.state = {
+        data: {
+          title: 'NSIS Forum Archive',
+          posts: []
+        }
       }
-    }
-  },
+  }
 
-  componentWillMount: function() {
-    getThread(this, this.props.params.thread);
-  },
+  componentWillMount() {
+    loadData(this.props.params.thread)
+    .then( (data) => {
+       this.setState({
+         data: data
+       })
+    })
+  }
 
-  // componentWillUnmount: function() {
-  //   this.serverRequest.abort();
-  // },
+  componentDidMount() {
+    document.querySelector('.spinner').style.display = 'none';
+  }
 
   render() {
     return (
@@ -35,14 +40,14 @@ const Thread = React.createClass({
           <tbody>
             {this.state.data.posts.map(function(post) {
               return (
-                <ThreadTableRow post={post} key={post.id} />
-                );
+                <Post post={post} key={post.id} />
+              );
             })}
           </tbody>
           <tfoot>
             <tr>
-              <td>
-                  <span className="text-muted"><a className="text-muted" href={forumUrl + this.state.data.thread_id}>Source</a> | <a className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.thread_id}>Internet Archive</a></span>
+              <td colSpan={2}>
+                <span title={"View Original: " + this.state.data.title} className="text-muted"><a className="text-muted" href={forumUrl + this.state.data.id}>Source</a> | <a title={"Save \"" + this.state.data.title + "\" on the Wayback Machine"} className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.id}>Internet Archive</a></span>
               </td>
             </tr>
           </tfoot>
@@ -50,6 +55,6 @@ const Thread = React.createClass({
       </div>
       )
   }
-});
+}
 
 export default Thread;

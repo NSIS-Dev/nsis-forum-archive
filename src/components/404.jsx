@@ -1,8 +1,8 @@
 // Dependencies
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
-class NotFound extends Component {
+class NotFound extends React.Component {
   componentDidMount() {
     document.title = "404";
   }
