@@ -8,11 +8,12 @@ import Index from './components/index.jsx';
 import Thread from './components/thread.jsx';
 import NotFound from './components/404.jsx';
 
-render(
-  <Router history={hashHistory}>
-    <Route path="/" component={Index} />
-    <Route path="/thread/:thread" component={Thread} />
-    <Route path="*" component={NotFound} />
-  </Router>
-  , document.getElementById('app')
+const routes = (
+    <Router history={hashHistory}>
+      <Route path="/" component={Index} />
+      <Route path="/thread/:thread" component={Thread} />
+      <Route path="*" component={NotFound} />
+    </Router>
 );
+
+render(routes, document.getElementById('app'));
