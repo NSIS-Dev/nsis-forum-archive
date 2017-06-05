@@ -7,17 +7,17 @@ export default function loadData(data = 'index') {
   if (data === 'index') {
     return loadIndex(data);
   }
+
   return loadThread(data);
 }
 
 function loadIndex() {
-
   console.time("Data loaded in")
 
   if (localStorage.getItem('nsis-forum.index') === null) {
     console.log("Loading data from JSON");
 
-    return fetch('./data/index.json')
+    return fetch('/data/index.json')
     .then(checkStatus)
     .then(parseJson)
     .then(function(data) {
@@ -46,7 +46,7 @@ function loadThread(id) {
   if (localStorage.getItem('nsis-forum.thread:' + id) === null) {
     console.log("Loading data from JSON");
 
-    return getJSON('./data/threads/' + id + '.json').then(function(thread) {
+    return getJSON('/data/threads/' + id + '.json').then(function(thread) {
       dataThread = thread;
 
       return Promise.all(
@@ -65,7 +65,7 @@ function loadThread(id) {
 
           if (post.user > 0 && didLoadUser.indexOf(post.user) === -1) {
             didLoadUser.push(post.user);
-            return getJSON('./data/users/' + post.user + '.json') ;
+            return getJSON('/data/users/' + post.user + '.json') ;
           }
         })
       );
