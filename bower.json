@@ -1,0 +1,12 @@
+{
+  "name": "nsis-forum-archive",
+  "version": "0.2.2",
+  "description": "React version of the NSIS Forum Archive",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Jan T. Sott",
+  "license": "MIT",
+  "dependencies": {
+    "SVG-Loaders": "svg-loaders#^1.0.2"
+  }
+}
