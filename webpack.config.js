@@ -26,7 +26,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: './node_modules/apache-server-configs/dist/.htaccess',
-        to: './.htaccess'
+        to: '../.htaccess'
       },
       {
         from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
