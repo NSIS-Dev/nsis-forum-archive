@@ -20,7 +20,7 @@ class Thread extends React.Component {
   }
 
   componentWillMount() {
-    loadData(this.props.params.thread)
+    loadData(this.props.match.params.thread)
     .then( (data) => {
        this.setState({
          data: data
@@ -35,7 +35,7 @@ class Thread extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1 className="lead"><a href="./">Forum Index</a> / {this.state.data.title}</h1>
+        <h1 className="lead"><a href="/">Forum Index</a> / {this.state.data.title}</h1>
         <table className="table table-striped">
           <tbody>
             {this.state.data.posts.map(function(post) {

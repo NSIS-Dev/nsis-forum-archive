@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import loadData from '../lib/load-data';
 
 // Constants
@@ -45,7 +45,7 @@ class Index extends React.Component {
               return (
                 <tr id={'thread-' + thread.id} key={thread.id}>
                     <td>
-                      { thread.sticky && <strong>Sticky:</strong> } <Link to={'/thread/'+ thread.id} activeStyle={{ color: 'red' }}>{thread.title}</Link>
+                      { thread.sticky && <strong>Sticky:</strong> } <Link to={'/thread/'+ thread.id}>{thread.title}</Link>
                     </td>
                     <td className="text-muted text-right small hidden-sm-down">{thread.replies}</td>
                     <td className="text-muted text-right small hidden-sm-down"><span title={thread.date_string}>{thread.date_relative}</span></td>

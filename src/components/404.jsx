@@ -1,10 +1,10 @@
 // Dependencies
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class NotFound extends React.Component {
   componentDidMount() {
-    document.title = "404";
+    document.title = "404 | NSIS Forum Archive";
   }
 
   render() {
