@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class NotFound extends React.Component {
   componentWillMount() {
@@ -9,6 +9,7 @@ class NotFound extends React.Component {
 
   componentDidMount() {
     document.querySelector('.spinner').style.display = 'none';
+    document.title = "404 | NSIS Forum Archive";
   }
 
   render() {
