@@ -56,8 +56,8 @@ class Index extends React.Component {
           </tbody>
           <tfoot>
             <tr>
-              <td>
-                  <span className="text-muted"><a className="text-muted" href={forumUrl}>Source</a></span>
+              <td colSpan={3}>
+                  <span className="text-muted float-right"><a className="text-muted" href={forumUrl}>Source</a></span>
               </td>
             </tr>
           </tfoot>

@@ -48,7 +48,7 @@ class Thread extends React.Component {
           <tfoot>
             <tr>
               <td colSpan={2}>
-                <span title={"View Original: " + this.state.data.title} className="text-muted"><a className="text-muted" href={forumUrl + this.state.data.id}>Source</a> | <a title={"Save \"" + this.state.data.title + "\" on the Wayback Machine"} className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.id}>Internet Archive</a></span>
+                <span title={"View Original: " + this.state.data.title} className="text-muted float-right"><a className="text-muted" href={forumUrl + this.state.data.id}>Source</a> | <a title={"Save \"" + this.state.data.title + "\" on the Wayback Machine"} className="text-muted" href={'http://web.archive.org/web/' + forumUrl + this.state.data.id}>Internet Archive</a></span>
               </td>
             </tr>
           </tfoot>
