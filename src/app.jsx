@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Switch, hashHistory } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, hashHistory } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 const history = createBrowserHistory();
