@@ -42,7 +42,7 @@ class Index extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.threads.map(function(thread) {
+            {this.state.threads.map( (thread) => {
               return (
                 <tr id={'thread-' + thread.id} key={thread.id}>
                     <td>
