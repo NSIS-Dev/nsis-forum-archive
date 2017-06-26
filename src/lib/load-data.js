@@ -17,14 +17,14 @@ function loadIndex() {
   if (localStorage.getItem('nsis-forum.index') === null) {
     console.log("Loading data from JSON");
 
-    return fetch('/data/index.json')
+    return fetch('./data/index.json')
     .then(checkStatus)
     .then(parseJson)
-    .then(function(data) {
+    .then( (data) => {
       console.timeEnd("Data loaded in");
       localStorage.setItem('nsis-forum.index', JSON.stringify(data));
       return data;
-    }).catch(function(error) {
+    }).catch( (error) => {
       console.error(error);
     });
   } else {
@@ -46,11 +46,11 @@ function loadThread(id) {
   if (localStorage.getItem('nsis-forum.thread:' + id) === null) {
     console.log("Loading data from JSON");
 
-    return getJSON('/data/threads/' + id + '.json').then(function(thread) {
+    return getJSON('./data/threads/' + id + '.json').then( (thread) => {
       dataThread = thread;
 
       return Promise.all(
-        thread.posts.map(function(post) {
+        thread.posts.map( (post) => {
           // TODO: move to separate function
           const d = new Date(post.timestamp * 1000);
           let options = {
@@ -65,22 +65,22 @@ function loadThread(id) {
 
           if (post.user > 0 && didLoadUser.indexOf(post.user) === -1) {
             didLoadUser.push(post.user);
-            return getJSON('/data/users/' + post.user + '.json') ;
+            return getJSON('./data/users/' + post.user + '.json') ;
           }
         })
       );
-    }).then(function(users) {
-      users.forEach(function(user) {
+    }).then( (users) => {
+      users.forEach( (user) => {
         if (typeof user !== 'undefined') {
           dataUsers[user.id] = user;
         }
       });
-    }).catch(function(err) {
+    }).catch( (err) => {
       // catch any error that happened so far
       console.error(err.message);
-    }).then(function() {
+    }).then( () => {
 
-      dataThread.posts.map(function(post) {
+      dataThread.posts.map( (post) => {
         if (typeof dataUsers[post.user] !== 'undefined') {
           post.user = dataUsers[post.user];
           post.user.avatar = getAvatar(post.user.name);
@@ -116,9 +116,9 @@ function getJSON(url) {
   return fetch(url)
   .then(checkStatus)
   .then(parseJson)
-  .then(function(data) {
+  .then( (data) => {
     return data;
-  }).catch(function(error) {
+  }).catch( (error) => {
     console.error(error);
   });
 }

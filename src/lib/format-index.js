@@ -2,7 +2,7 @@
 import { format as prettyDate } from 'pretty-date';
 
 export default function formatIndex(data) {
-    let posts = data.map(function(item){
+    let posts = data.map( (item) => {
       const d = new Date(item.latest * 1000);
 
       var options = {

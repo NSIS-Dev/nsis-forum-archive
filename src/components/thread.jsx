@@ -39,7 +39,7 @@ class Thread extends React.Component {
         <h1 className="lead"><a href="/">Forum Index</a> / {this.state.data.title}</h1>
         <table className="table table-striped">
           <tbody>
-            {this.state.data.posts.map(function(post) {
+            {this.state.data.posts.map( (post) => {
               return (
                 <Post post={post} key={post.id} />
               );

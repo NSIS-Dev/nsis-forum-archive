@@ -3,7 +3,7 @@ import { format as prettyDate } from 'pretty-date';
 
 export default function formatThread(data) {
 
-    let posts = data.posts.map(function(post){
+    let posts = data.posts.map( (post) => {
       const d = new Date(post.timestamp * 1000);
 
       var options = {
