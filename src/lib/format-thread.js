@@ -1,7 +1,7 @@
 // Dependencies
 import { format as prettyDate } from 'pretty-date';
 
-export default function formatThread(data) {
+let formatThread = (data) => {
 
     let posts = data.posts.map( (post) => {
       const d = new Date(post.timestamp * 1000);
@@ -39,4 +39,6 @@ export default function formatThread(data) {
     }
 
     return data;
-}
+};
+
+export { formatThread };
