@@ -1,7 +1,7 @@
 // Dependencies
 import { format as prettyDate } from 'pretty-date';
 
-export default function formatIndex(data) {
+let formatIndex = (data) => {
     let posts = data.map( (item) => {
       const d = new Date(item.latest * 1000);
 
@@ -38,4 +38,6 @@ export default function formatIndex(data) {
     });
 
     return posts;
-}
+};
+
+export { formatIndex };

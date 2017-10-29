@@ -3,15 +3,19 @@ import { format as prettyDate } from 'pretty-date';
 import Identicon from 'identicon.js';
 import sha1 from 'sha1';
 
-export default function loadData(data = 'index') {
+let loadData = (data = 'index') => {
   if (data === 'index') {
     return loadIndex(data);
   }
 
   return loadThread(data);
-}
+};
 
-function loadIndex() {
+export { loadData };
+
+
+// Private helper functions
+let loadIndex = () => {
   console.time("Data loaded in")
 
   if (localStorage.getItem('nsis-forum.index') === null) {
@@ -34,9 +38,9 @@ function loadIndex() {
 
     return Promise.resolve(JSON.parse(localStorage.getItem('nsis-forum.index')));
   }
-}
+};
 
-function loadThread(id) {
+let loadThread = (id) => {
   let didLoadUser = [];
   let dataUsers = {};
   let dataThread = {};
@@ -97,9 +101,9 @@ function loadThread(id) {
 
     return Promise.resolve(JSON.parse(localStorage.getItem('nsis-forum.thread:' + id)));
   }
-}
+};
 
-function getAvatar(str) {
+let getAvatar = (str) => {
   let options = {
     // foreground: [255, 255, 255, 255],
     background: [0, 0, 0, 255],
@@ -110,9 +114,9 @@ function getAvatar(str) {
   let data = new Identicon(hash, options).toString()
   
   return 'data:image/svg+xml;base64,' + data
-}
+};
 
-function getJSON(url) {
+let getJSON = (url) => {
   return fetch(url)
   .then(checkStatus)
   .then(parseJson)
@@ -121,16 +125,16 @@ function getJSON(url) {
   }).catch( (error) => {
     console.error(error);
   });
-}
+};
 
-function checkStatus(response) {
+let checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
     return Promise.resolve(response)
   } else {
     return Promise.reject(new Error(response.statusText))
   }
-}
+};
 
-function parseJson(response) {
+let parseJson = (response) => {
   return response.json()
-}
+};

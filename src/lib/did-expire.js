@@ -1,4 +1,4 @@
-export default function didExpire(data, interval = 'weekly') {
+let didExpire = (data, interval = 'weekly') => {
 
     const now = Date.now();
     const json = JSON.parse(data);
@@ -21,4 +21,6 @@ export default function didExpire(data, interval = 'weekly') {
     }
  
     return false;
-}
+};
+
+export { didExpire };
