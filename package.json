@@ -8,13 +8,15 @@
   "license": "MIT",
   "dependencies": {
     "apache-server-configs": "^2.14.0",
-    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap": "4.0.0-beta",
+    "bower": "^1.8.0",
     "font-awesome-svg-png": "^1.2.2",
     "identicon.js": "^2.2.1",
     "pretty-date": "^0.2.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1",
+    "query-string": "^4.3.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
     "sha1": "^1.1.1"
   },
   "devDependencies": {
@@ -23,12 +25,12 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "copy-webpack-plugin": "^4.0.1",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack": "3.0.0",
+    "webpack-dev-server": "2.5.0"
   },
   "scripts": {
     "build": "webpack -p",
-    "postinstall": "bower install && webpack -p",
+    "postinstall": "node node_modules/bower/bin/bower install && webpack -p",
     "start": "webpack-dev-server --progress --colors --hot"
   }
 }
